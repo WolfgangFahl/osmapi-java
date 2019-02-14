@@ -51,7 +51,8 @@ public class OSMElementAPITest {
 		
 		when(endpoint.requestURLWithBasicAuth(Matchers.eq("https://"+Preferences.ENDPOINT_OSM_API_V06_ELEMENT_BASE_URL+"/node/803223"),Matchers.anyString(), Matchers.anyString())).thenReturn(response_1);
 				
-		osmCredentials = new OSMCredentials(Preferences.DEVELOPMENT_OSM_CREDENTIALS_LOGIN, Preferences.DEVELOPMENT_OSM_CREDENTIALS_PASS);
+    Preferences pref=Preferences.getInstance();
+		osmCredentials = new OSMCredentials(pref.getUser(), pref.getPassword());
 		
 	}
 	
